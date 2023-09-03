@@ -1,0 +1,23 @@
+<%- include("adminDashHeader") -%>
+    <div class="container" style="margin-top: 20px; margin-left: 450px">
+        <form action="/adminDashboard/newAdminCourse" method="POST">
+        <label for="course_id"><b>Course ID</b></label>
+        <input type="text" placeholder="Enter Course ID" name="course_id" required>
+    <br>
+    <br>
+        <label for="course_name"><b>Course Name</b></label>
+        <input type="text" placeholder="Enter Course Name" name="course_name" required>
+    <br>
+    <br>
+        <label for="course_description"><b>Course Description</b></label>
+        <input type="text" placeholder="Enter Course Description" name="course_description" required>
+    <br>
+    <br>
+        <label for="credits"><b>Course Credits</b></label>
+        <input type="text" placeholder="Enter Course Credits" name="credits" required>
+    <br>
+    <br>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    <%- include("adminDashFooter") -%>

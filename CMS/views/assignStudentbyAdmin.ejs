@@ -1,0 +1,25 @@
+<%- include("adminDashHeader") -%>
+  <div class="container" style="margin-left:450px ;margin-top:20px;">
+    <form action="/adminDashboard/assignStudentbyAdmin" method="POST">
+      <label for="student_id"><b>Student ID</b></label>
+      <select name="student_id" required>
+        <% data_student.forEach(function(getData){ %>
+        <option><%= getData.student_id %></option>
+        <% }); %>
+      </select>
+      <br>
+      <br>
+      <label for="course_id"><b>Course ID</b></label>
+      <select name="course_id" required>
+        <% data.forEach(function(getData){ %>
+        <option><%= getData.course_id %></option>
+        <% }); %>
+      </select>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+  </div>
+  </form>
+</body>
+
+</html>

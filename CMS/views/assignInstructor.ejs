@@ -1,0 +1,23 @@
+<%- include("adminDashHeader") -%>
+  <div class="container" style="margin-top: 20px; margin-left: 450px">
+
+
+    <form action="/adminDashboard/assignInstructor" method="POST">
+      <label for="instructor_id"><b>Instructor ID</b></label>
+      <input type="text" placeholder="Enter Instructor ID" name="instructor_id" required>
+      <br>
+      <br>
+      <label for="course_id"><b>Course ID</b></label>
+      <!-- <input type="text" placeholder="Enter Course ID"  required> -->
+      <select name="course_id" placeholder="Enter Course ID" required>
+        <!-- <option value="SELECT Course ID">Not Selected</option> -->
+        <% data.forEach(function(getData){ %>
+        <option><%= getData.course_id %></option>
+        <% }); %>
+      </select>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+  </div>
+  </form>
+  <%- include("adminDashFooter") -%>

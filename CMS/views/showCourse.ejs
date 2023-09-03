@@ -1,0 +1,42 @@
+<%- include("adminDashHeader") -%>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3" style="margin-left: 400px; margin-top: 50px; width: 500px;">
+                <table class="table table-bordered">
+
+                    <tr>
+
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Course Credits</th>
+
+                    </tr>
+                    <% if(data.length> 0)
+                        {
+                        data.forEach(function(getData){
+                        %>
+                        <tr>
+                            <td>
+                                <%= getData.course_id %>
+                            </td>
+                            <td>
+                                <%= getData.course_name %>
+                            </td>
+                            <td>
+                                <%= getData.credits %>
+                            </td>
+                        </tr>
+                        <% }); } else { %>
+                            <tr>
+                                <td colspan="5">No Data Found</td>
+                            </tr>
+                            <% } %>
+
+                </table><br><br>
+                <form action="/adminDashboard/newAdminCourse">
+                    <input type="submit" class="btn btn-primary" value="ADD course">
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include("adminDashFooter") -%>
